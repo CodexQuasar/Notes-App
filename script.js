@@ -75,6 +75,8 @@ function handleLogin() {
         return;
     }
     
+    localStorage.setItem("currentUser", username);
+
     
     authContainer.classList.add("hidden");
     appContainer.classList.remove("hidden");
@@ -89,6 +91,7 @@ function handleLogin() {
 }
 
 function handleLogout() {
+    localStorage.removeItem("currentUser");
     authContainer.classList.remove("hidden");
     appContainer.classList.add("hidden");
     notesContainer.innerHTML = "";
